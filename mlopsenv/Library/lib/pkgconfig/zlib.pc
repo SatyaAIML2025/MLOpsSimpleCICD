@@ -1,0 +1,13 @@
+prefix=D:/AIML/MLOpsAssignment1_1/MLOpsSimpleCICD/mlopsenv/Library
+exec_prefix=D:/AIML/MLOpsAssignment1_1/MLOpsSimpleCICD/mlopsenv/Library
+libdir=D:/AIML/MLOpsAssignment1_1/MLOpsSimpleCICD/mlopsenv/Library/lib
+sharedlibdir=D:/AIML/MLOpsAssignment1_1/MLOpsSimpleCICD/mlopsenv/Library/lib
+includedir=D:/AIML/MLOpsAssignment1_1/MLOpsSimpleCICD/mlopsenv/Library/include
+
+Name: zlib
+Description: zlib compression library
+Version: 1.2.13
+
+Requires:
+Libs: -L${libdir} -L${sharedlibdir} -lz
+Cflags: -I${includedir}
