@@ -28,7 +28,7 @@ jobs:
       - name: Lint code with pylint
         run: |
           pip install pylint
-          pylint model.py
+          pylint mlmodel.py
 
   test:
     runs-on: ubuntu-latest
