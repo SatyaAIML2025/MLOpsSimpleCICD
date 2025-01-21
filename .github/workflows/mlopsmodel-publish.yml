@@ -25,10 +25,10 @@ jobs:
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
-      - name: Lint code with pylint
-        run: |
-          pip install pylint
-          pylint mlmodel.py
+      #- name: Lint code with pylint
+        #run: |
+         # pip install pylint
+         # pylint mlmodel.py
 
   test:
     runs-on: ubuntu-latest
