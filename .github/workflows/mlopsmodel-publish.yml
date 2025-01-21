@@ -1,0 +1,63 @@
+# This workflow will upload a Python Package to PyPI when a release is created
+
+# This workflow uses actions that are not certified by A Satyanarayana Rao.
+
+name: MLOpsCICD
+# Trigger the work flow on any push to the main branch or pull request.
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      # Check out the code from the repository
+      - uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.10.16'
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+      - name: Lint code with pylint
+        run: |
+          pip install pylint
+          pylint model.py
+
+  test:
+    runs-on: ubuntu-latest
+    needs: lint
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.10.16'
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+      - name: Run tests
+        run: |
+          pytest
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.10.16'
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+      - name: Deploy model
+        run: |
+          echo "Deploying model..."
