@@ -1,5 +1,5 @@
 import pytest
-from src.mlmodel import load_data, train_model, evaluate_model
+from model import load_data, train_model, evaluate_model
 
 def test_load_data():
     # Arrange
