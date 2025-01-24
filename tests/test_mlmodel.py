@@ -23,6 +23,3 @@ def test_evaluate_model():
     model = train_model(X_train, y_train)
     accuracy = evaluate_model(model, X_test, y_test)
     assert accuracy >= 0.5 # Expecting a reasonably good accuracy
-
-
-    
