@@ -25,11 +25,7 @@ jobs:
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
-      #- name: Lint code with pylint
-      #  run: |
-       #   pip install pylint
-       #   pylint model.py
-
+          
   test:
     runs-on: ubuntu-latest
     needs: lint
